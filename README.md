@@ -1,76 +1,95 @@
-# 🛍️ Black Friday Sales EDA & Data Cleaning
+# 🛍️ Black Friday Sales EDA, Visualization & Feature Selection
 
-This repository contains an exploratory data analysis (EDA) and data cleaning workflow for the **Black Friday Sales Dataset**, a popular dataset from a retail dataset challenge.
+This project provides a comprehensive analysis of the **Black Friday Sales Dataset**, including data cleaning, exploratory data analysis (EDA), visualizations, and feature selection. It's a perfect hands-on example for anyone looking to understand retail consumer behavior and build predictive models using real-world data.
 
-## 📊 Project Objective
+---
 
-Analyze customer purchase behavior on Black Friday based on demographics and product categories, clean the data, and prepare it for predictive modeling.
+## 📌 Project Objective
+
+Analyze purchase behavior based on customer demographics and product categories, clean the dataset, explore key trends using visualization, and prepare the data with selected features for machine learning models.
 
 ---
 
 ## 📁 Dataset Description
 
-The dataset consists of transactional records including:
+The dataset contains the following:
 
-- **User demographics**: Gender, Age, Occupation, City Category, etc.
-- **Product details**: Product_ID, Product_Category_1/2/3
-- **Target variable**: `Purchase` (amount spent)
+- **User Demographics**:  
+  - `User_ID`, `Gender`, `Age`, `Occupation`, `City_Category`, `Stay_In_Current_City_Years`, `Marital_Status`
 
-Source: [Black Friday Dataset on Kaggle](https://www.kaggle.com/datasets/sdolezel/black-friday)
+- **Product Information**:  
+  - `Product_ID`, `Product_Category_1`, `Product_Category_2`, `Product_Category_3`
+
+- **Target Variable**:  
+  - `Purchase` — amount spent by the customer
+
+📦 **Source**: [Black Friday Dataset on Kaggle](https://www.kaggle.com/datasets/sdolezel/black-friday)
 
 ---
 
-## 🧹 Key Steps in This Project
+## 🔍 Project Workflow
 
 ### 1. 📥 Data Loading
-- Load train and test CSV files using Pandas.
+- Loaded `train.csv` and `test.csv` using Pandas.
 
 ### 2. 🧼 Data Cleaning
-- Handle missing values in `Product_Category_2` and `Product_Category_3`.
-- Convert categorical columns using label encoding if needed.
-- Ensure proper datatypes.
+- Checked for missing values.
+- Handled nulls in `Product_Category_2` and `Product_Category_3` using imputation.
+- Verified column types and converted where needed.
+- Removed redundant or unnecessary columns.
 
 ### 3. 📊 Exploratory Data Analysis (EDA)
-- Visualize purchase trends based on:
-  - Age, Gender, City Category
-  - Occupation, Marital Status
-  - Product Categories
+- Summary statistics and data types
+- Purchase patterns grouped by:
+  - Gender
+  - Age group
+  - Marital status
+  - Occupation
+  - City category
 
-### 4. 📦 Feature Engineering (Optional)
-- Encoding categorical variables
-- Aggregating features if needed for modeling
+### 4. 📈 Data Visualization
 
----
+#### 🧍 Demographics vs Purchase:
+- **Bar plots**: Average purchase by gender, age, occupation
+- **Box plots**: Purchase distribution across city categories and age groups
 
-## 🖼️ Sample Visualizations
+#### 📦 Product Insights:
+- Most popular product categories (1, 2, 3)
+- Product category frequency charts
 
-- Average Purchase by Gender
-- Purchase Distribution by Age Group
-- Count of Product Categories Purchased
-- Heatmaps and Boxplots
+#### 📉 Correlations:
+- Heatmap of feature correlations
+- Distribution of purchase amounts
 
----
+### 5. 🧠 Feature Engineering
+- Label encoding of categorical variables: Gender, Age, City_Category, Stay_In_Current_City_Years
+- Derived new features (optional): e.g., total number of product categories interacted with
 
-## 🛠️ Tools Used
-
-- Python 🐍
-- Pandas 📊
-- Matplotlib & Seaborn 📈
-- Jupyter Notebook 📓
-
----
-
-## 🔮 Future Scope
-
-- Build predictive models to estimate purchase amounts
-- Try classification of high vs. low spenders
-- Deploy a Streamlit or Dash dashboard for interactive EDA
+### 6. 🔍 Feature Selection
+- Used:
+  - Correlation matrix
+  - Univariate feature importance
+  - Tree-based model feature importance (optional)
+- Selected most relevant predictors for modeling
 
 ---
 
-## 🚀 How to Run
 
-1. Clone the repo  
-   ```bash
-   git clone https://github.com/yourusername/black-friday-sales-eda.git
-   cd black-friday-sales-eda
+---
+
+## 🛠️ Tools & Libraries Used
+
+- Python 3.x  
+- Pandas & NumPy  
+- Matplotlib & Seaborn  
+- Scikit-learn  
+- Jupyter Notebook  
+
+---
+
+## 🚀 How to Run This Project
+
+ **Clone the repository**
+```bash
+git clone https://github.com/yourusername/black-friday-sales-eda.git
+cd black-friday-sales-eda
